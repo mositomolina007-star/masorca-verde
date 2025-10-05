@@ -1,2 +1,111 @@
 # masorca-verde
 productos orgánicos  con las 3 B
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Masorca Verde — Agricultura y Venta de Granos</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Roboto', sans-serif; margin: 0; background-color: #f4f7f2; color: #333; }
+    header { background: linear-gradient(90deg, #5cb85c, #3c763d); color: white; text-align: center; padding: 2rem 1rem; }
+    header h1 { margin: 0; font-size: 2.5rem; letter-spacing: 1px; }
+    header p { margin-top: .5rem; font-size: 1.2rem; }
+
+    nav { background: #2f5d2f; display: flex; justify-content: center; gap: 1.5rem; padding: .75rem; flex-wrap: wrap; }
+    nav a { color: white; text-decoration: none; font-weight: 500; padding: 0.5rem 1rem; border-radius: 5px; transition: all 0.3s; }
+    nav a:hover { background: rgba(255,255,255,0.2); transform: scale(1.05); }
+
+    section { padding: 3rem 1rem; max-width: 1200px; margin: 0 auto; }
+    h2 { color: #2e6d2e; border-bottom: 3px solid #a6d785; display: inline-block; padding-bottom: .3rem; margin-bottom: 2rem; font-size: 2rem; }
+
+    .productos, .precios { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; margin-top: 1rem; }
+    .producto, .precio-card { background: white; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.15); padding: 1rem; text-align: center; transition: transform 0.4s, box-shadow 0.4s; }
+    .producto:hover, .precio-card:hover { transform: translateY(-10px); box-shadow: 0 12px 25px rgba(0,0,0,0.3); }
+    .producto img, .precio-card img { width: 100%; border-radius: 12px; height: 220px; object-fit: cover; transition: transform 0.4s; }
+    .producto:hover img, .precio-card:hover img { transform: scale(1.1); }
+    .producto h3, .precio-card h3 { margin-top: 1rem; color: #3c763d; font-size: 1.3rem; }
+    .precio-card p.price { font-weight: bold; color: #d9534f; margin-top: 0.5rem; font-size: 1.2rem; }
+    .precio-card p.desc { font-size: 0.95rem; color: #555; margin-top: 0.3rem; }
+
+    .contacto { background: #e6f4e6; border-left: 5px solid #3c763d; padding: 2rem; margin-top: 2rem; border-radius: 15px; }
+    .contacto a { color: #2e6d2e; text-decoration: none; font-weight: bold; }
+    .contacto a:hover { text-decoration: underline; }
+    .whatsapp-btn { display: inline-block; position: fixed; bottom: 20px; right: 20px; z-index: 1000; background: #25D366; color: white; padding: 1rem 1.5rem; border-radius: 50px; text-decoration: none; font-weight: bold; box-shadow: 0 5px 15px rgba(0,0,0,0.25); transition: background 0.3s, transform 0.3s; }
+    .whatsapp-btn:hover { background: #1ebe5d; transform: scale(1.1); }
+
+    .referencias { font-size: .95rem; color: #555; background: #f9faf9; padding: 2rem; border-radius: 12px; }
+    #mapa { width: 100%; height: 300px; margin-top: 1rem; border-radius: 12px; overflow: hidden; border:1px solid #ccc; }
+
+    @media (max-width: 600px) { header h1 { font-size: 2rem; } nav { flex-direction: column; } nav a { width: 100%; text-align: center; margin-bottom: 0.5rem; } }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>🌽 Masorca Verde</h1>
+    <p>Calidad, tradición y sabor del campo mexicano</p>
+  </header>
+
+  <nav>
+    <a href="#nosotros">Nosotros</a>
+    <a href="#productos">Productos</a>
+    <a href="#precios">Precios</a>
+    <a href="#contacto">Contacto</a>
+    <a href="#referencias">Referencias</a>
+  </nav>
+
+  <section id="nosotros">
+    <h2>Sobre Nosotros</h2>
+    <p>En <strong>Masorca Verde</strong> nos dedicamos a la producción y comercialización de granos y frutas de alta calidad. Promovemos la agricultura sustentable, apoyando a productores locales y fomentando el consumo responsable.</p>
+  </section>
+
+  <section id="productos">
+    <h2>Nuestros Productos</h2>
+    <div class="productos">
+      <div class="producto"><img src="https://upload.wikimedia.org/wikipedia/commons/3/3a/Corncobs.jpg" alt="Granos de Maíz"><h3>Granos de Maíz</h3></div>
+      <div class="producto"><img src="https://upload.wikimedia.org/wikipedia/commons/1/10/Pitaya_amarilla.jpg" alt="Pitahaya"><h3>Pitahaya</h3></div>
+      <div class="producto"><img src="https://upload.wikimedia.org/wikipedia/commons/7/7f/Maize_colours.jpg" alt="Maíz de Color"><h3>Maíz de Color</h3></div>
+    </div>
+  </section>
+
+  <section id="precios">
+    <h2>Precios y Galería</h2>
+    <div class="precios">
+      <div class="precio-card">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/3/3a/Corncobs.jpg" alt="Granos de Maíz">
+        <h3>Granos de Maíz</h3>
+        <p class="price">$20/kg</p>
+        <p class="desc">Maíz blanco y amarillo de excelente calidad para consumo o siembra.</p>
+      </div>
+      <div class="precio-card">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/1/10/Pitaya_amarilla.jpg" alt="Pitahaya">
+        <h3>Pitahaya</h3>
+        <p class="price">$50/kg</p>
+        <p class="desc">Fruta exótica, dulce y refrescante. Ideal para jugos, postres y exportación.</p>
+      </div>
+      <div class="precio-card">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/7/7f/Maize_colours.jpg" alt="Maíz de color">
+        <h3>Maíz de Color</h3>
+        <p class="price">$25/kg</p>
+        <p class="desc">Variedades nativas: rojo, azul y morado, cultivadas sin agroquímicos.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contacto">
+    <h2>Contacto y Ubicación</h2>
+    <div class="contacto">
+      <p>📧 <strong>Correo:</strong> <a href="mailto:ventas@masorcaverde.com">ventas@masorcaverde.com</a></p>
+      <p>📞 <strong>WhatsApp Ventas:</strong> <a href="https://wa.me/529999999999" target="_blank">+52 999 999 9999</a></p>
+      <p>🏡 <strong>Dirección:</strong> Villa de Oaxtepec, Morelos, México</p>
+      <div id="mapa">
+        <iframe width="100%" height="100%" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?key=TU_API_KEY&q=Villa+de+Oaxtepec,Morelos,Mexico" allowfullscreen></iframe>
+      </div>
+    </div>
+  </section>
+
+  <a href="https://wa.me/529999999999?text=Hola%20Masorca%20Verde" class="whatsapp-btn" target="_blank">💬 WhatsApp</a>
+
+</body>
+</html>
