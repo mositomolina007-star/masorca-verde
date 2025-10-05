@@ -3,40 +3,105 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Masorca Verde — Agricultura y Venta de Granos</title>
+  <title>Masorca Verde — Agricultura Sustentable</title>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <style>
-    body { font-family: 'Roboto', sans-serif; margin: 0; background-color: #f4f7f2; color: #333; }
-    header { background: linear-gradient(90deg, #5cb85c, #3c763d); color: white; text-align: center; padding: 2rem 1rem; }
-    header h1 { margin: 0; font-size: 2.5rem; letter-spacing: 1px; }
-    header p { margin-top: .5rem; font-size: 1.2rem; }
+    body {
+      font-family: 'Roboto', sans-serif;
+      background: #f2f5f0;
+      margin: 0;
+      color: #333;
+    }
+    header {
+      background: linear-gradient(90deg, #4CAF50, #2E7D32);
+      color: #fff;
+      text-align: center;
+      padding: 2rem 1rem;
+    }
+    header h1 { font-size: 2.5rem; margin: 0; }
+    nav {
+      background: #388E3C;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      padding: .75rem;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      padding: 0.5rem 1rem;
+      border-radius: 5px;
+      transition: 0.3s;
+    }
+    nav a:hover { background: rgba(255,255,255,0.2); }
 
-    nav { background: #2f5d2f; display: flex; justify-content: center; gap: 1.5rem; padding: .75rem; flex-wrap: wrap; }
-    nav a { color: white; text-decoration: none; font-weight: 500; padding: 0.5rem 1rem; border-radius: 5px; transition: all 0.3s; }
-    nav a:hover { background: rgba(255,255,255,0.2); transform: scale(1.05); }
+    section { max-width: 1200px; margin: auto; padding: 3rem 1rem; }
+    h2 { color: #2E7D32; font-size: 2rem; margin-bottom: 1.5rem; border-bottom: 3px solid #A5D6A7; display: inline-block; }
 
-    section { padding: 3rem 1rem; max-width: 1200px; margin: 0 auto; }
-    h2 { color: #2e6d2e; border-bottom: 3px solid #a6d785; display: inline-block; padding-bottom: .3rem; margin-bottom: 2rem; font-size: 2rem; }
+    .productos, .precios {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+    }
 
-    .productos, .precios { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; margin-top: 1rem; }
-    .producto, .precio-card { background: white; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.15); padding: 1rem; text-align: center; transition: transform 0.4s, box-shadow 0.4s; }
-    .producto:hover, .precio-card:hover { transform: translateY(-10px); box-shadow: 0 12px 25px rgba(0,0,0,0.3); }
-    .producto img, .precio-card img { width: 100%; border-radius: 12px; height: 220px; object-fit: cover; transition: transform 0.4s; }
-    .producto:hover img, .precio-card:hover img { transform: scale(1.1); }
-    .producto h3, .precio-card h3 { margin-top: 1rem; color: #3c763d; font-size: 1.3rem; }
-    .precio-card p.price { font-weight: bold; color: #d9534f; margin-top: 0.5rem; font-size: 1.2rem; }
-    .precio-card p.desc { font-size: 0.95rem; color: #555; margin-top: 0.3rem; }
+    .card {
+      background: #fff;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+      text-align: center;
+      transition: transform 0.3s ease;
+    }
+    .card:hover { transform: scale(1.03); }
+    .card img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+    }
+    .card h3 { color: #2E7D32; margin: 1rem 0 0.5rem; }
+    .price { color: #D32F2F; font-weight: bold; margin-bottom: 0.5rem; }
+    .desc { padding: 0 1rem 1rem; color: #555; }
 
-    .contacto { background: #e6f4e6; border-left: 5px solid #3c763d; padding: 2rem; margin-top: 2rem; border-radius: 15px; }
-    .contacto a { color: #2e6d2e; text-decoration: none; font-weight: bold; }
+    .contacto {
+      background: #E8F5E9;
+      border-left: 5px solid #4CAF50;
+      padding: 2rem;
+      border-radius: 15px;
+    }
+    .contacto a { color: #1B5E20; text-decoration: none; }
     .contacto a:hover { text-decoration: underline; }
-    .whatsapp-btn { display: inline-block; position: fixed; bottom: 20px; right: 20px; z-index: 1000; background: #25D366; color: white; padding: 1rem 1.5rem; border-radius: 50px; text-decoration: none; font-weight: bold; box-shadow: 0 5px 15px rgba(0,0,0,0.25); transition: background 0.3s, transform 0.3s; }
-    .whatsapp-btn:hover { background: #1ebe5d; transform: scale(1.1); }
 
-    .referencias { font-size: .95rem; color: #555; background: #f9faf9; padding: 2rem; border-radius: 12px; }
-    #mapa { width: 100%; height: 300px; margin-top: 1rem; border-radius: 12px; overflow: hidden; border:1px solid #ccc; }
+    #mapa { width: 100%; height: 300px; margin-top: 1rem; border-radius: 12px; border: 1px solid #ccc; }
 
-    @media (max-width: 600px) { header h1 { font-size: 2rem; } nav { flex-direction: column; } nav a { width: 100%; text-align: center; margin-bottom: 0.5rem; } }
+    .whatsapp-btn {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #25D366;
+      color: white;
+      padding: 1rem 1.5rem;
+      border-radius: 50px;
+      font-weight: bold;
+      text-decoration: none;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    }
+    .whatsapp-btn:hover { background: #1EBE5D; }
+
+    .download-btn {
+      display: inline-block;
+      background: #4CAF50;
+      color: white;
+      padding: 0.8rem 1.2rem;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      transition: background 0.3s;
+      margin-top: 1rem;
+    }
+    .download-btn:hover { background: #45A049; }
   </style>
 </head>
 <body>
@@ -50,43 +115,62 @@
     <a href="#productos">Productos</a>
     <a href="#precios">Precios</a>
     <a href="#contacto">Contacto</a>
-    <a href="#referencias">Referencias</a>
+    <a href="#descargas">Descargas</a>
   </nav>
 
   <section id="nosotros">
     <h2>Sobre Nosotros</h2>
-    <p>En <strong>Masorca Verde</strong> nos dedicamos a la producción y comercialización de granos y frutas de alta calidad. Promovemos la agricultura sustentable, apoyando a productores locales y fomentando el consumo responsable.</p>
+    <p>En <strong>Masorca Verde</strong> producimos y comercializamos granos y frutas frescas con técnicas sustentables, apoyando a productores locales y promoviendo el consumo responsable.</p>
   </section>
 
   <section id="productos">
     <h2>Nuestros Productos</h2>
     <div class="productos">
-      <div class="producto"><img src="https://upload.wikimedia.org/wikipedia/commons/3/3a/Corncobs.jpg" alt="Granos de Maíz"><h3>Granos de Maíz</h3></div>
-      <div class="producto"><img src="https://upload.wikimedia.org/wikipedia/commons/1/10/Pitaya_amarilla.jpg" alt="Pitahaya"><h3>Pitahaya</h3></div>
-      <div class="producto"><img src="https://upload.wikimedia.org/wikipedia/commons/7/7f/Maize_colours.jpg" alt="Maíz de Color"><h3>Maíz de Color</h3></div>
+      <div class="card">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/3/3a/Corncobs.jpg" alt="Granos de Maíz">
+        <h3>Granos de Maíz</h3>
+      </div>
+      <div class="card">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/f/fb/Mango_Stella.JPG" alt="Mango">
+        <h3>Mango Ataulfo</h3>
+      </div>
+      <div class="card">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/5/5c/Papayas.jpg" alt="Papaya">
+        <h3>Papaya Maradol</h3>
+      </div>
+      <div class="card">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/4/49/Tomate.jpg" alt="Tomate">
+        <h3>Tomate Rojo</h3>
+      </div>
     </div>
   </section>
 
   <section id="precios">
     <h2>Precios y Galería</h2>
     <div class="precios">
-      <div class="precio-card">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/3/3a/Corncobs.jpg" alt="Granos de Maíz">
+      <div class="card">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/3/3a/Corncobs.jpg" alt="Maíz">
         <h3>Granos de Maíz</h3>
         <p class="price">$20/kg</p>
-        <p class="desc">Maíz blanco y amarillo de excelente calidad para consumo o siembra.</p>
+        <p class="desc">Maíz blanco y amarillo de primera calidad, ideal para consumo o siembra.</p>
       </div>
-      <div class="precio-card">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/1/10/Pitaya_amarilla.jpg" alt="Pitahaya">
-        <h3>Pitahaya</h3>
-        <p class="price">$50/kg</p>
-        <p class="desc">Fruta exótica, dulce y refrescante. Ideal para jugos, postres y exportación.</p>
+      <div class="card">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/f/fb/Mango_Stella.JPG" alt="Mango">
+        <h3>Mango Ataulfo</h3>
+        <p class="price">$35/kg</p>
+        <p class="desc">Fruta jugosa, dulce y con aroma tropical. Perfecta para jugos y postres.</p>
       </div>
-      <div class="precio-card">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/7/7f/Maize_colours.jpg" alt="Maíz de color">
-        <h3>Maíz de Color</h3>
+      <div class="card">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/5/5c/Papayas.jpg" alt="Papaya">
+        <h3>Papaya Maradol</h3>
         <p class="price">$25/kg</p>
-        <p class="desc">Variedades nativas: rojo, azul y morado, cultivadas sin agroquímicos.</p>
+        <p class="desc">Fruta fresca y nutritiva, cultivada sin agroquímicos.</p>
+      </div>
+      <div class="card">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/4/49/Tomate.jpg" alt="Tomate">
+        <h3>Tomate Rojo</h3>
+        <p class="price">$18/kg</p>
+        <p class="desc">Cultivo local, ideal para ensaladas y salsas mexicanas.</p>
       </div>
     </div>
   </section>
@@ -95,15 +179,22 @@
     <h2>Contacto y Ubicación</h2>
     <div class="contacto">
       <p>📧 <strong>Correo:</strong> <a href="mailto:ventas@masorcaverde.com">ventas@masorcaverde.com</a></p>
-      <p>📞 <strong>WhatsApp Ventas:</strong> <a href="https://wa.me/529999999999" target="_blank">+52 999 999 9999</a></p>
-      <p>🏡 <strong>Dirección:</strong> Villa de Oaxtepec, Morelos, México</p>
+      <p>📞 <strong>WhatsApp:</strong> <a href="https://wa.me/529842778508" target="_blank">+52 984 277 8508</a></p>
+      <p>🏡 <strong>Dirección:</strong> Tulum Quintana Roo</p>
       <div id="mapa">
-        <iframe width="100%" height="100%" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?key=TU_API_KEY&q=Villa+de+Oaxtepec,Morelos,Mexico" allowfullscreen></iframe>
+        <iframe width="100%" height="100%" frameborder="0" style="border:0"
+          src="https://www.google.com/maps?q=Villa+de+Oaxtepec,+Morelos,+México&output=embed"
+          allowfullscreen></iframe>
       </div>
     </div>
   </section>
 
-  <a href="https://wa.me/529999999999?text=Hola%20Masorca%20Verde" class="whatsapp-btn" target="_blank">💬 WhatsApp</a>
+  <section id="descargas">
+    <h2>Descargas</h2>
+    <p>Puedes descargar nuestro catálogo o información adicional en formato PDF.</p>
+    <a href="Yaxna.pdf" download class="download-btn">📄 Descargar archivo (PDF)</a>
+  </section>
 
+  <a href="https://wa.me/529842778508?text=Hola%20Masorca%20Verde" class="whatsapp-btn" target="_blank">💬 WhatsApp</a>
 </body>
 </html>
